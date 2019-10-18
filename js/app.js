@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   deleteButton.addEventListener('click',deleteAll);
 });
 
-const makePlayer = function(first_name,last_name,age,position){
+const makePlayer = function(first_name,last_name,age,position,first_eleven){
   const player = {
     first_name: first_name,
     last_name: last_name,
     age: age,
-    position: position
+    position: position,
+    first_eleven: first_eleven
   };
   return player;
 };
@@ -21,9 +22,11 @@ const addPlayer = function(player){
   const name = makeNewParagraph(`${player.first_name} ${player.last_name}`);
   const age = makeNewParagraph(`Age: ${player.age}`);
   const position = makeNewParagraph(`Position: ${player.position}`);
+  const firstTeam = makeNewParagraph(`First Team? ${player.first_eleven}`);
   listElement.appendChild(name);
   listElement.appendChild(age);
   listElement.appendChild(position);
+  listElement.appendChild(firstTeam);
   const playerList = document.querySelector('#player-list');
   playerList.appendChild(listElement);
 };
@@ -39,7 +42,8 @@ const addPlayerToList = function(event){
   const player = makePlayer(event.target.first_name.value,
     event.target.last_name.value,
     event.target.age.value,
-    event.target.position.value);
+    event.target.position.value,
+    event.target.first_eleven.value);
   addPlayer(player);
   event.target.reset()
 };
