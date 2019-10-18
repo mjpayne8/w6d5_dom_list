@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
-  form = document.querySelector('#registration-form');
+  const form = document.querySelector('#registration-form');
   form.addEventListener('submit', addPlayerToList);
+  const deleteButton = document.querySelector('#delete-all');
+  deleteButton.addEventListener('click',deleteAll);
 });
 
 const makePlayer = function(first_name,last_name,age,position){
@@ -41,3 +43,10 @@ const addPlayerToList = function(event){
   addPlayer(player);
   event.target.reset()
 };
+
+const deleteAll = function(event){
+  const playerList = document.querySelector('#player-list');
+  while (playerList.firstChild){
+    playerList.removeChild(playerList.firstChild);
+  };
+}
