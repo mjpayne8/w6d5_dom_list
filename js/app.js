@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
+  form = document.querySelector('#registration-form');
+  form.addEventListener('submit', addPlayerToList);
 });
 
 const makePlayer = function(first_name,last_name,age,position){
@@ -28,4 +30,14 @@ const makeNewParagraph = function(text){
   const paragraph = document.createElement('p');
   paragraph.textContent = text;
   return paragraph;
+};
+
+const addPlayerToList = function(event){
+  event.preventDefault();
+  const player = makePlayer(event.target.first_name.value,
+    event.target.last_name.value,
+    event.target.age.value,
+    event.target.position.value);
+  addPlayer(player);
+  event.target.reset()
 };
