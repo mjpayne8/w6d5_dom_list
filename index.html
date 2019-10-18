@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Football Player Registration</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="javascript/app.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <form id="registration-form" action="index.html" method="post">
+
+      <div class="form-item">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first_name" id="first-name">
+      </div>
+
+      <div class="form-item">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last_name" id="last-name">
+      </div>
+
+      <div class="form-item">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+      </div>
+
+      <div class="form-item">
+        <label for="position">Position</label>
+        <select id="position" name="position">
+          <option value="" disabled selected></option>
+          <option value="Goalkeeper">Goalkeeper</option>
+          <option value="Defender">Defender</option>
+          <option value="Midfielder">Midfielder</option>
+          <option value="Forward">Forward</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <input type="submit" value="Submit Information">
+      </div>
+
+    </form>
+  </body>
+</html>
