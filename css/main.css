@@ -1,0 +1,13 @@
+li {
+  list-style-type: none;
+  border-style: solid;
+  background-color: yellow;
+  padding: 10px;
+  margin: 10px;
+}
+
+#player-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
